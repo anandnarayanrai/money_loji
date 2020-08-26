@@ -22,8 +22,8 @@ class SplashScreenState extends State<SplashScreen>
   var quotesPosition = 0;
 
   List<String> quotes = [
-    'Quick and Easy',
     'Best Offers',
+    'Quick and Easy',
     'Safe and Secure',
   ];
 
@@ -41,10 +41,10 @@ class SplashScreenState extends State<SplashScreen>
     controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         controller.reverse(from: 200);
-        if (quotesPosition == 0) {
-          quotesPosition++;
-        } else {
+        if (quotesPosition == quotes.length-1) {
           quotesPosition = 0;
+        } else {
+          quotesPosition++;
         }
         width = 70.0;
       }
